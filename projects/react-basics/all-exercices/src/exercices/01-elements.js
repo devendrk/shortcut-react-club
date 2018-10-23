@@ -162,19 +162,19 @@ export const interpolatingPart3 = (
  * - age: Number
  * It should return the same JSX element as exercice 2 and 4 but uses the parameter of the function as data source.
  */
-export const elementFactory = function(name,age){
-    return (
-        <div>
-            <h1>name</h1>
-            <p>age</p>
-        </div>
-    )
+// export const elementFactory = function(name,age){
+//     return (
+//         <div>
+//             <h1>name</h1>
+//             <p>age</p>
+//         </div>
+//     )
     
-}
+// }
 
 
  
-
+jhg
   /**
  * 01-8 - interpolating dynamic data part 2
  *  
