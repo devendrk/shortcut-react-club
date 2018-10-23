@@ -90,6 +90,12 @@ export const interpolatingPart1 = (
  */
 
 export const interpolateUser = {name: "Jeanne", age: 30}; 
+export const interpolatingPart2 = (
+    <div className = "card">
+        <h4>{interpolateUser.name}</h4>
+        <p>Age: {interpolateUser.age}</p>
+    </div>
+)
 
 
 
@@ -113,7 +119,21 @@ export const interpolateUser = {name: "Jeanne", age: 30};
  * 
  */
 export const interpolateArray = [{flavor: "chocolate", cost: 2}, {flavor: "vanilla", cost: 1.5}, {flavor: "papaya", cost: 3}];
+export const interpolatingPart3 = (
+    <ul>
+        {interpolateArray.map((item)=>{
+            return (<div>
+                    <li key = {item}>
+                        <h4>Flavor: {item.flavor}</h4>
+                        <p>Price: {item.cost}€</p>
+                    </li>
+                    
+                </div>
+                )
 
+        })}
+    </ul>
+)
 
 
 
@@ -142,6 +162,15 @@ export const interpolateArray = [{flavor: "chocolate", cost: 2}, {flavor: "vanil
  * - age: Number
  * It should return the same JSX element as exercice 2 and 4 but uses the parameter of the function as data source.
  */
+export const elementFactory = function(name,age){
+    return (
+        <div>
+            <h1>name</h1>
+            <p>age</p>
+        </div>
+    )
+    
+}
 
 
  
