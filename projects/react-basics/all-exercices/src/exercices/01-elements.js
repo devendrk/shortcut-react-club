@@ -45,6 +45,12 @@ import React from "react"
  * )
  * 
  */
+export const nestedJSX = (
+    <div className = "card">
+        <h4>John Doe</h4>
+        <p>Age: 42</p>
+    </div>
+)
 
  
 
@@ -64,6 +70,9 @@ import React from "react"
  */
 
 export const interpolateText = "I am a JS string"
+export const interpolatingPart1 = (
+    <div>{interpolateText}</div>
+)
 
 
 
