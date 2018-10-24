@@ -122,13 +122,13 @@ export const interpolateArray = [{flavor: "chocolate", cost: 2}, {flavor: "vanil
 export const interpolatingPart3 = (
     <ul>
         {interpolateArray.map((item)=>{
-            return (<div>
-                    <li key = {item}>
-                        <h4>Flavor: {item.flavor}</h4>
-                        <p>Price: {item.cost}€</p>
+            return (<ul key = {item.flavor}>
+                    <li >
+                        <h4 >Flavor: {item.flavor}</h4>
+                        <p >Price: {item.cost}€</p>
                     </li>
                     
-                </div>
+                </ul>
                 )
 
         })}
@@ -162,20 +162,16 @@ export const interpolatingPart3 = (
  * - age: Number
  * It should return the same JSX element as exercice 2 and 4 but uses the parameter of the function as data source.
  */
-// export const elementFactory = function(name,age){
-//     return (
-//         <div>
-//             <h1>name</h1>
-//             <p>age</p>
-//         </div>
-//     )
-    
-// }
-
-
- 
-jhg
-  /**
+export function elementFactory(name, age) {
+        return(
+            <div className = "card" >
+            <h4>{name}</h4>
+            <p>Age: {age}</p>
+        </div>
+        )
+   
+}
+  /**jhg
  * 01-8 - interpolating dynamic data part 2
  *  
  * The previous example works fine, but what if you want to have dozens of parameters? You would have to refactor your code every time.
@@ -187,18 +183,6 @@ jhg
  * 
  * Your function will return the same JSX as exercie 7 but you will have to extract the data from the props this time.
  */
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
