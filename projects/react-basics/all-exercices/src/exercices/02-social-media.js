@@ -22,7 +22,18 @@ import "exercices/02-social-media.css"
  * - a with className "so-me profile-link", href "#/profile" and "View Profile" as content
  *
 */
+// src="https://unsplash.com/photos/MyTRhVO5LRY"
 
+export function Author(props){
+	return(
+		<div className = "so-me author">
+			<img className = "so-me user-img" src ="https://placehold.it/400x400" alt = {props.name} />
+			<h4 >{props.name}</h4>
+			<p className = "so-me bio">{props.bio}</p>
+			<a className = "so-me profile-link" href = "#/profile">View Profile</a>
+		</div>
+	)
+}
 	
 
 
@@ -63,6 +74,14 @@ export const stephenKing = {
 	bio: "Stephen Edwin King is an American author of horror, supernatural fiction,..."
 }
 
+export const stephenKingCard =  (
+	<Author 
+	name = {stephenKing.name}
+	picture = {stephenKing.picture}
+	bio = {stephenKing.bio}
+	/>
+)
+
 /**
  * 02-3 - a Post component
  *
@@ -86,8 +105,27 @@ export const stephenKing = {
  *        - "far fa-thumbs-up" if the props.liked is false
  *    - div with className "so-me text" and as content your props.children
  *    - p with className "so-me metadata" and content "Posted on " + your postedOn prop
- *
- * 
+ */
+export function Post(props) {
+	retrun(
+		<div className ="so-me post">
+			<Author PropsName = {props.author}/>
+			<div className = "so-me content">
+				<h3 className = "so-me title">title</h3>
+				<a href = "#/like">
+					{props.liked ?<i claseName = "fas fa-thumbs-up"></i>:<i claseName = "far fa-thumbs-up"></i>}
+				</a>
+			</div>
+			<div className = "so-me text">
+				{props.children}
+				<p className= "so-me metadata">Posted on {props.postedOn}</p>
+
+			</div>
+		</div>
+	)
+}
+ 
+/* 
  * Help with the <i> element:
  *  With {} you can interpolate most Javascript expressions.
  *  You can't evaluate an if else statement but you can evaluate a ternary operator
