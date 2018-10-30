@@ -14,6 +14,28 @@ import PropTypes from "prop-types";
  * Each li must have a key with the value "todo.id", and the content should be the todo.task string
  *
  */
+// exprot const todos = [
+//   {
+//    id: 1,
+//    task: "abc"
+//  }, {
+//      2: 'cdklfd'
+//    }
+//  ]
+
+export const CrashableTodoList = (todos) => {
+  return (
+    <ul>
+      {
+        todos.map((todo) => {
+          return (<li key={todo.id}>{todo.task}</li>)
+        })
+      }
+    </ul>
+    
+    
+  )
+}
 
 /**
  * 03-2 - Use crashable component

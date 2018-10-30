@@ -110,7 +110,8 @@ export const interpolatingPart2 = (
  * Export a variable "interpolatingPart3". It should contain an ul with the correct number of li elements.
  * In order to do so, you have to use the Array.protoptype.map() method in between your ul tags.
  * 
- * The Array.prototype.map() takes a callback function. The callback function will be called with each element in the array as parameter.
+ * The Array.prototy
+ * pe.map() takes a callback function. The callback function will be called with each element in the array as parameter.
  * For each of the item in the array you must return some JSX element.
  * 
  * The returned JSX should be a li with two children:

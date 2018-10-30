@@ -24,10 +24,10 @@ import "exercices/02-social-media.css"
 */
 // src="https://unsplash.com/photos/MyTRhVO5LRY"
 
-export function Author(props){
+export function Author(props) {
 	return(
 		<div className = "so-me author">
-			<img className = "so-me user-img" src ="https://placehold.it/400x400" alt = {props.name} />
+			<img className = "so-me user-img" src={props.picture} alt = {props.name} />
 			<h4 >{props.name}</h4>
 			<p className = "so-me bio">{props.bio}</p>
 			<a className = "so-me profile-link" href = "#/profile">View Profile</a>
@@ -74,6 +74,9 @@ export const stephenKing = {
 	bio: "Stephen Edwin King is an American author of horror, supernatural fiction,..."
 }
 
+// export const stephenKingCard = React.createElement(Author, { name: stephenKing.name }, "Hello");
+// const stephenKingCard = Author({name: stephenKing.name, children: React.children})
+
 export const stephenKingCard =  (
 	<Author 
 	name = {stephenKing.name}
@@ -107,20 +110,25 @@ export const stephenKingCard =  (
  *    - p with className "so-me metadata" and content "Posted on " + your postedOn prop
  */
 export function Post(props) {
-	retrun(
+	return(
 		<div className ="so-me post">
-			<Author PropsName = {props.author}/>
+			<Author bio={props.author.bio} name={props.author.name} picture={props.author.picture} />
 			<div className = "so-me content">
-				<h3 className = "so-me title">title</h3>
-				<a href = "#/like">
-					{props.liked ?<i claseName = "fas fa-thumbs-up"></i>:<i claseName = "far fa-thumbs-up"></i>}
-				</a>
-			</div>
-			<div className = "so-me text">
+				<h3 className="so-me title">
+					{props.title}
+					<a className = "so-me thumb" href="#/like">
+						{props.liked ?<i className = "fas fa-thumbs-up"></i>:<i className = "far fa-thumbs-up"></i>}
+					</a>
+				</h3>
+				<div className = "so-me text">
 				{props.children}
+				</div>
 				<p className= "so-me metadata">Posted on {props.postedOn}</p>
-
+				
 			</div>
+			
+
+			
 		</div>
 	)
 }
@@ -154,7 +162,11 @@ export function Post(props) {
  * 
  * Source: https://twitter.com/StephenKing/status/1045064042816180224
  */
-
+export const stephenKingPost = (
+	<Post title="Trump's Conference" postedOn="26/09/18" author={stephenKing} >
+		<p>Trump’s news conference is like listening to a nut calling in to a radio sports talk show.</p>
+	</Post>	
+) 
 
 
 
@@ -181,6 +193,26 @@ export function Post(props) {
  *      - children: the post.content property
  * 
  */
+export const SocialMedia = (props) => {
+	const posts = props.posts;
+
+	return (
+		<div id = "SocialMedia">
+			<h1 id="title">{props.title}</h1>
+			<div className="so-me container">
+				{
+					posts.map((post) => {
+						return (<li key={post.id}>
+						<Post title={post.title} author={post.author} postedOn={post.postedOn} liked={post.liked}>
+							{post.content}
+						</Post>
+					
+					</li>)})
+				}
+			</div>
+		</div>
+	)
+}
 
 
 
