@@ -23,11 +23,11 @@ import PropTypes from "prop-types";
 //    }
 //  ]
 
-export const CrashableTodoList = (todos) => {
+export const CrashableTodoList = (props) => {
   return (
     <ul>
       {
-        todos.map((todo) => {
+        props.todos.map((todo) => {
           return (<li key={todo.id}>{todo.task}</li>)
         })
       }
