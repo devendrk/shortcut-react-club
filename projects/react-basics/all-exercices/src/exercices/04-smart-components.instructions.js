@@ -30,13 +30,9 @@
  * Export a class component named "SmartCounter" that extends Component.
  *
  * Inside your render method, return a div. That div contains a button with text "click me" and a p (empty for now)
- *
- *
- *
- *
- *
- *
- *
+ */
+
+/*
  * 04-2 - adding memory to your state
  *
  * Instead of using the props.count, we are going to store the "count" inside the class component.
@@ -54,8 +50,11 @@
  * Your state should be an object with one key: [number] 'count' and defaulting to 0
  *
  * Now inside your render method, assign the value of "this.state.count" to your 'p' component.
- *
- *
+ */
+
+
+ 
+ /*
  *
  *
  *

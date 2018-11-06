@@ -71,6 +71,30 @@ export const badCounter2 = <BadCounter2 />;
  *  Read the instructions in the file 04-smart-components.instructions.js
  *  Write your solution in this file, below!
  */
+class SmartCounter extends React.Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+            count:0
+        }
+        
+    }
+    render() {
+        return (
+            <div>
+                <button>Click me</button>
+                <p>{this.state.count}</p>
+            </div>
+        );
+    }
+}
+
+export const myCounter = (
+    <div>
+        <SmartCounter />
+    </div> 
+)
+
 
 /**
  * 04-6 Conclusion(ish)
