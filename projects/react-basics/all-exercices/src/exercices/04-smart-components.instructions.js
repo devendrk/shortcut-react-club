@@ -82,7 +82,7 @@
  * return to your SmartCounter component and create a method named "handleClick" between your constructor and render method.
  *
  * The handleClick method will be called with one argument but we don't need it, so let's the parameters empty.
- * add a prop "onClick" to the button and assign it the "handleClick" method (onClick={this.handleclick})
+ * add a prop "onClick" to the button and assign it the "handleClick" method (onClick={this.handleClick})
  *
  * Inside this function, we are going to update the state. First I'll show you how NOT to do it.
  *
@@ -141,4 +141,29 @@
  * Remove the console.log line and try it in your browser...
  * ...And TADAAA! Finally working!
  *
+ */
+
+ /**
+ * 04-6 Conclusion(ish)
+ *
+ * I'm sorry for the long exercice but once you understand state and how to update it, it will become super easy to use.
+ * The exercices are going faster and faster, this is also to encourage you to ask questions during the sessions and on slack.
+ * Otherwise I would have to write a thousand line of instruction and dozens of exercices, which would be complicated to do.
+ *
+ * Now you have made your first smart component and seen a bit of event handling in React.
+ * From now on we will be using both functional and class components.
+ *
+ * We will use functional components when the component doesn't need to be "smart" (store and mutate state).
+ * We will use class components to store the state and "command" the "dumb" components.
+ *
+ * Before we go to the next step,
+ * In order to demonstrate why we need to store the state inside the component (and not outside like in BadCounter2),
+ *
+ * You're going to export a variabled named "mySecondCounter" and assign it another instance of "SmartCounter".
+ * Now go to your browser and click on either one or the other counters.
+ *
+ * You'll see that they are independant, each component owns its own state and each component manages its own state.
+ * This is part of what makes React powerful, being able to reuse and compose stateless and statefull components alike.
+ * Another part is that React will only update the DOM if the props or the state changed,
+ * and because you'll never mutate (change) either of them yourself (always use setState), React will be able to perfom it's task efficiently!
  */
