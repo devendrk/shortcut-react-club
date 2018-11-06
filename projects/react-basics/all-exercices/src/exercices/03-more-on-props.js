@@ -48,6 +48,9 @@ export const CrashableTodoList = (props) => {
  * Before going to the next exercice, just pass an empty array as the todos prop.
  *
  */
+export const weakTodoList = (
+  <CrashableTodoList todos={[]}/>
+)
 
 /**
  * 03-3 - A javascript Solution
@@ -60,13 +63,25 @@ export const CrashableTodoList = (props) => {
  * This component should return the same content as exercice 1
  *
  */
+export const DefaultParametersTodoList = (props) => {
+  const {todos = []} = props;
+  return (
+    <ul>
+    {
+      todos.map((todo) => {
+        return (<li key={todo.id}>{todo.task}</li>)
+      })
+    }
+  </ul>
+  )
+}
 
 /**
  * 03-4 - Testing your javascript Solution
  *
  * export a variable named "jsWayTodoList" and  use your DefaultParametersTodoList component. Don't pass any props yet.
  *
- * Check your browser. Your app will still crash.
+ * Check your browser. Your app willp still crash.
  * The reason is that React will always pass a prop object to your function.
  * If you don't pass props, you will receive an empty object ({}), and default parameters won't apply.
  *
@@ -85,6 +100,11 @@ export const CrashableTodoList = (props) => {
  * And instead of doing "props.todos.map()", just do "todos.map()".
  * Now your app should work (and the tests should pass)
  */
+export const jsWayTodoList = (
+    <DefaultParametersTodoList />
+  )
+  
+
 
 /**
  * 03-5 - The React way
@@ -113,6 +133,21 @@ export const CrashableTodoList = (props) => {
  * attach the defaultProps property with a "todos" prop that should be an empty array.
  *
  */
+ export const BestTodoList = ((props) => {
+  return (
+    <ul>
+    {
+      props.todos.map((todo) => {
+        return (<li key={todo.id}>{todo.task}</li>)
+      })
+    }
+  </ul>
+  )
+})
+BestTodoList.defaultProps = {
+  todos: []
+}  
+
 
 /**
  * 03-6 - Testing your last component
@@ -121,6 +156,9 @@ export const CrashableTodoList = (props) => {
  * Your component should now render without crashing!
  *
  */
+export const bestTodoList = (
+    <BestTodoList />
+)
 
 /**
  * 03-7 - Testing your last component again
@@ -134,6 +172,10 @@ export const todos = [
   { id: "2", task: "learn props" },
   { id: "3", task: "learn defaultProps" }
 ];
+
+export const bestTodoListWithProps = (
+  <BestTodoList todos = {todos}/>
+)
 
 /**
  * 03-8 - prop type checking
@@ -150,7 +192,7 @@ export const todos = [
  * prop-types are already included in this project, we are going to focus on using it.
  *
  * Attach a propTypes attribute to your "BestTodoList" component and type check your props.
- * You should only accept a prop "todos" wich is a required array of objects with the following shape: {id: string, task: string}
+ * You should only accept a prop "todos" which is a required array of objects with the following shape: {id: string, task: string}
  *
  * Read the documentation to learn how to do that!
  *
