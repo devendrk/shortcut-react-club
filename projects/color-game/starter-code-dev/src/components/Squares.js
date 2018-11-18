@@ -2,16 +2,21 @@ import React from "react";
 
 
 class Squares extends React.Component{
+   
+
     render() {
+
+        // when clicked should change the color
+        // 
+
         return (
             <div className="squares" >
-                <div className="square" />
-                <div className="square" />
-                <div className="square" />
-                <div className="square" />
-                <div className="square" />
-                <div className="square" />
-
+                <div Onclick={this.changeColor} className="square" />
+                <div Onclick={this.changeColor} className="square" />
+                <div Onclick={this.changeColor} className="square" />
+                <div Onclick={this.changeColor} className="square" />
+                <div Onclick={this.changeColor} className="square" />
+                <div Onclick={this.changeColor} className="square" />
             </div>
 
         )

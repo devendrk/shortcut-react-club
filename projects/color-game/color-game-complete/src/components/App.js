@@ -69,6 +69,7 @@ export class App extends React.Component {
 			this.setState((prevState) => ({
 				tries: prevState.tries + 1,
 				squares: [
+					
 					...squares.slice(0, index),
 					{
 						...candidate,

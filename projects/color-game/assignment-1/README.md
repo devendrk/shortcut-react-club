@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
-# Color Game
+# Colour Game
 
 This Color Game is a React application inspired by the Color Gessing game from Colt Steele's course "Web Developper Bootcamp" hosted on Udemy.
 

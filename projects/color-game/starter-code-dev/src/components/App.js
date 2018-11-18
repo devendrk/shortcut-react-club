@@ -1,32 +1,27 @@
 import React from "react";
-import Squares from './Squares'
-import Nav from './Title'
+import Squares from './Squares';
+import Title from './Title';
+import Navbar from './Navbar';
 
+
+const randomNum = Math.floor(Math.random() * 256);
+        const color =()=> {
+            return ` rgb(${randomNum},${randomNum}, ${randomNum})`
+        }
+
+        const changeColor = (e) => {
+            e.PreventDefault(); 
+        }
 
 export class App extends React.Component {
+
+	
 	render() {
 		return (
 			<div>
-				<title />
-
-
-
-				<div className="info">
-					<div className="container">
-						<div className="navbar">
-
-							<button id="restart" >Play again</button>
-
-							<span id="message"></span>
-
-							<button >EASY</button>
-							<button className="active">HARD</button>
-						</div>
-					</div>
-				</div>
+				<Title />
+				<Navbar />
 				<Squares />
-				
-
 	
 			</div>
 		)
